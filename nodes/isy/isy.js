@@ -451,10 +451,10 @@ var ISY = function (controller_node, address, username, password, useHttps) {
 
                     //Get ISY version number and check whether it supports node servers:
                     try {
-                        isy.ISYVersion = document.childNamed('app_full_version').val;
+                        isy.ISYVersion = document.childNamed('app_version').val;
 
                         //determine the number of node servers supported:
-                        var nodeServersSupported = (document.childNamed('nodedefs').val == 'true');
+                        var nodeServersSupported = (document.childNamed('nodedefs') && document.childNamed('nodedefs').val == 'true');
 
                         if (!nodeServersSupported) {
                             isy.nodeServersSupported = 0;

@@ -18,7 +18,6 @@ var ISYVariable = function (controller_node, xmlVariableDef) {
 ISYVariable.prototype.parseXML = function (xmlVariableDef) {
     try {
         this.init = tryStringToNum(xmlVariableDef.childNamed('init').val);
-        this.prec = tryStringToNum(xmlVariableDef.childNamed('prec').val);
         this.val = tryStringToNum(xmlVariableDef.childNamed('val').val);
     } catch (err) {
         this.controller.node.warn('Error parsing variable XML: ' + err);
